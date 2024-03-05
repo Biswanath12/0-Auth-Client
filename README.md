@@ -1,52 +1,73 @@
-# Authlib Connect
+# Flask OAuth Integration
 
-Authlib Connect is a simple Flask web application that demonstrates the integration of OAuth authentication with Google, Twitter, and Facebook.
+This is a simple Flask application that demonstrates OAuth integration with Google, Twitter, and Facebook using Authlib.
 
-## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [How it Works](#how-it-works)
-- [License](#license)
+## Getting Started
 
-## Prerequisites
-Make sure you have the following installed on your system:
-- Python (version 3.x)
+### Prerequisites
+
+- Python 3.x
+- [Authlib](https://docs.authlib.org/en/latest/) library
 - Flask
-- Authlib
+- Dependencies specified in `requirements.txt`
 
-You can install the required packages using the following command:
+### Installation
 
-pip install Flask Authlib
+1. Clone the repository:
 
-Installation
-    1. Clone the repository
-       git clone https://github.com/your-username/authlib-connect.git
-       cd authlib-connect
-    2. Install the dependencies:
-       pip install -r requirements.txt
-Configuration
-    1. Set up OAuth applications on the respective platforms (Google, Twitter, Facebook) and obtain the client ID and client secret.
-    2. Set the environment variables for the client IDs and secrets:
-       export GOOGLE_CLIENT_ID="your_google_client_id"
-       export GOOGLE_CLIENT_SECRET="your_google_client_secret"
-       export TWITTER_CLIENT_ID="your_twitter_client_id"
-       export TWITTER_CLIENT_SECRET="your_twitter_client_secret"
-       export FACEBOOK_CLIENT_ID="your_facebook_client_id"
-       export FACEBOOK_CLIENT_SECRET="your_facebook_client_secret"
+    ```bash
+    git clone https://github.com/Biswanath12/0-Auth-Client.git
+    ```
 
-Usage
-Run the Flask Application:
-python app.py
-Visit http://localhost:5000 in your web browser.
-How it works
-        ? The main entry point of the application is app.py.
-        ? The application uses Flask and Authlib to handle OAuth authentication with Google, Twitter, and Facebook. 
-        ? Each provider (Google, Twitter, Facebook) has its route (/google/, /twitter/, /facebook/) for initiating the authentication process. 
-        ? After authentication, user details are printed to the console. Modify the code as needed to store or process the user information. 
-        ? The application also includes a simple HTML page (index.html) to display the authentication buttons. 
-Licence
-This project is licensed under the MIT License.
-	
+2. Install dependencies:
 
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Configuration
+
+1. Set up OAuth credentials:
+
+    - **Google:**
+        - Obtain the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` from the [Google Developer Console](https://console.developers.google.com/).
+
+    - **Twitter:**
+        - Obtain the `TWITTER_CLIENT_ID` and `TWITTER_CLIENT_SECRET` by creating a Twitter Developer App.
+
+    - **Facebook:**
+        - Obtain the `FACEBOOK_CLIENT_ID` and `FACEBOOK_CLIENT_SECRET` from the [Facebook Developer Portal](https://developers.facebook.com/).
+
+2. Set environment variables:
+
+    ```bash
+    export GOOGLE_CLIENT_ID=your_google_client_id
+    export GOOGLE_CLIENT_SECRET=your_google_client_secret
+    export TWITTER_CLIENT_ID=your_twitter_client_id
+    export TWITTER_CLIENT_SECRET=your_twitter_client_secret
+    export FACEBOOK_CLIENT_ID=your_facebook_client_id
+    export FACEBOOK_CLIENT_SECRET=your_facebook_client_secret
+    ```
+
+### Usage
+
+1. Run the Flask application:
+
+    ```bash
+    python 0auth.py
+    ```
+
+2. Open your browser and go to [http://localhost:5000](http://localhost:5000).
+
+3. Click on the social media icons to initiate OAuth authentication.
+
+4. OAuth responses will be displayed in the console.
+
+## Additional Notes
+
+- The application uses Authlib for OAuth integration. Make sure to handle user details securely based on your application's needs.
+- You may customize the authentication routes to perform actions other than printing user details, such as storing them in a database or creating user sessions.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
